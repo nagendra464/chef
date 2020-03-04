@@ -57,4 +57,6 @@ service 'myserver' do
   action :start
 end
 
-
+#--------------------------------For every dependency-------------------------
+berks install
+berks upload
