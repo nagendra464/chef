@@ -60,3 +60,20 @@ end
 #--------------------------------For every dependency-------------------------
 berks install
 berks upload
+#-----------------------create role-----------------------------------
+knife role create ROLE_Name
+
+
+#------------------------------To upload Environment---------------------------
+knife environment from file filename.rb
+
+name 'PROD'
+description ' This is production environment'
+cookbook_versions  'chef-env-role' => '0.1.6'
+
+#-----------------------------------To upload role-----------------
+knife role from file filename.rb
+
+name "DB"
+description "An example database role"
+run_list "recipe[java]","recipe[chef-env-role-demo::mysql]"
