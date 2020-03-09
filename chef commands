@@ -83,4 +83,9 @@ kitchen converge
 #--------------------------------To add role to node------------------
 knife node run_list add ubuntu01 'role[WEB]'
 
+# ------------------------To create static files-------------------------
+knife generate file . filename
+
+#----------------------------------To create dynamic files------------------------
+knife generate template . filename
 
