@@ -74,8 +74,13 @@ cookbook_versions  'chef-env-role' => '0.1.6'
 #-----------------------------------To upload role-----------------
 knife role from file filename.rb
 
-#----------------------------For testing------------------------
-kitchen converge
 name "DB"
 description "An example database role"
 run_list "recipe[java]","recipe[chef-env-role-demo::mysql]"
+#----------------------------For testing------------------------
+kitchen converge
+
+#--------------------------------To add role to node------------------
+knife node run_list add ubuntu01 'role[WEB]'
+
+
