@@ -3,7 +3,7 @@
 knife bootstrap 3.17.25.26 --ssh-user ubuntu --sudo --ssh-identity-file "D:\pratice.pem" -N Node01
 
 
-#-----------------perminate delete------------------------------
+#-----------------permanent delete------------------------------
 sudo apt-get remove --purge oracle-java9-installer
 sudo apt-get remove --purge icedtea-* openjdk-*
 
@@ -74,6 +74,8 @@ cookbook_versions  'chef-env-role' => '0.1.6'
 #-----------------------------------To upload role-----------------
 knife role from file filename.rb
 
+#----------------------------For testing------------------------
+kitchen converge
 name "DB"
 description "An example database role"
 run_list "recipe[java]","recipe[chef-env-role-demo::mysql]"
